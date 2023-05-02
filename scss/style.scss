@@ -1,0 +1,680 @@
+@use '../scss' as *;
+
+/* -------------------------------------------------------------------------- */
+/*                                   RESETS                                   */
+/* -------------------------------------------------------------------------- */
+*,
+*::after,
+*::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: 0;
+}
+
+a {
+  color: $white;
+  text-decoration: none;
+}
+
+/* -------------------------------------------------------------------------- */
+/*                                    BODY                                    */
+/* -------------------------------------------------------------------------- */
+body {
+  @include onDesktop {
+    background-image: url('/assets/img/bg-header-desktop.png');
+  }
+
+  @include onMobile {
+    background-image: url('/assets/img/bg-header-mobile.png');
+  }
+
+  background-position: center top;
+  background-attachment: scroll;
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-color: $white;
+  color: $dark-gray;
+  font-family: $bai;
+}
+
+
+/* -------------------------------------------------------------------------- */
+/*                                   DESKTOP                                  */
+/* -------------------------------------------------------------------------- */
+@include onDesktop {
+  .intro {
+
+    &__logo {
+      img {}
+    }
+
+    &__textbox {
+      width: 65%;
+
+      &-title {
+        @include introTitleText-Desktop;
+      }
+
+      &-description {
+        @include introDescriptionText-Desktop;
+        margin-bottom: 4rem;
+      }
+    }
+
+    &__buttons {
+      &-ios {
+        @include desktopButtonStyle;
+      }
+
+      &-mac {
+        @include desktopButtonStyle;
+      }
+    }
+  }
+
+  .snippets {
+    &__textbox {
+      width: 48%;
+
+      &-title {
+        @include titleText-Desktop;
+      }
+
+      &-description {
+        @include descriptionText-Desktop;
+      }
+    }
+
+    &__features {
+      display: flex;
+
+      &-img {
+        margin-right: 7rem;
+        margin-left: -2rem;
+      }
+
+      &-list {
+        text-align: left;
+
+        &_textbox {
+          width: 60%;
+
+          &-title {
+            margin-bottom: 0.5rem;
+          }
+
+          &-description {
+            font-size: 1rem;
+            line-height: 1.9rem;
+            margin-bottom: 3.5rem;
+          }
+        }
+      }
+    }
+  }
+
+  .clipboard {
+    margin-bottom: 5rem;
+
+    &__textbox {
+      &-title {
+        @include titleText-Desktop;
+      }
+
+      &-description {
+        @include descriptionText-Desktop;
+        width: 75%;
+        margin-bottom: 6rem;
+      }
+    }
+
+    &__img {}
+  }
+
+  .workflow {
+    &__textbox {
+      margin-bottom: 4rem;
+
+      &-title {
+        @include titleText-Desktop;
+      }
+
+      &-description {
+        @include descriptionText-Desktop;
+      }
+    }
+
+    &__features {
+      display: flex;
+      justify-content: center;
+      align-items: baseline;
+
+      &-featurebox {
+        width: 25%;
+        margin: 0 0.7rem;
+
+        &_img {}
+
+        &_title {}
+
+        &_description {
+          line-height: 1.8rem;
+        }
+      }
+    }
+
+    &__brands {
+      display: flex;
+      width: 100%;
+
+      &-img {
+        margin: 0 2.5rem;
+      }
+    }
+  }
+
+  .os {
+    &__textbox {
+      width: 65%;
+
+      &-title {
+        @include titleText-Desktop;
+      }
+
+      &-description {
+        @include descriptionText-Desktop;
+      }
+
+    }
+
+    &__buttons {
+      &-ios {
+        @include desktopButtonStyle;
+      }
+
+      &-mac {
+        @include desktopButtonStyle;
+      }
+    }
+  }
+
+  .footer {
+    height: 150px;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+
+    &__logo {
+      &-img {}
+    }
+
+    &__links {
+      .faqs {
+        grid-area: faqs;
+      }
+
+      .contact-us {
+        grid-area: contact-us;
+      }
+
+      .privacy-policy {
+        grid-area: privacy-policy;
+      }
+
+      .press-kit {
+        grid-area: press-kit;
+      }
+
+      .install-guide {
+        grid-area: install-guide;
+      }
+
+      display: grid;
+      grid-template-areas: 'faqs privacy-policy install-guide'
+      'contact-us press-kit press-kit';
+
+      &-link {
+        font-size: 1.1rem;
+        margin: 0.5rem 3rem;
+      }
+    }
+
+    &__sm {
+      &-facebook {
+        margin-right: 1rem;
+      }
+
+      &-twitter {
+        margin-right: 1rem;
+      }
+
+      &-instagram {}
+    }
+  }
+}
+
+/* -------------------------------------------------------------------------- */
+/*                                   MOBILE                                   */
+/* -------------------------------------------------------------------------- */
+@include onMobile {
+  section {
+    padding: 2rem;
+  }
+
+  .intro {
+
+    &__logo {
+      img {}
+    }
+
+    &__textbox {
+      &-title {
+        @include introTitleText-Mobile;
+      }
+
+      &-description {
+        @include introDescriptionText-Mobile;
+        margin-bottom: 3rem;
+        width: 97%;
+      }
+    }
+
+    &__buttons {
+      @include colCenter;
+
+      &-ios {
+        @include mobileButtonStyle;
+        margin-bottom: 1.5rem;
+      }
+
+      &-mac {
+        @include mobileButtonStyle;
+      }
+    }
+  }
+
+  .snippets {
+    &__textbox {
+      &-title {
+        @include titleText-Mobile;
+      }
+
+      &-description {
+        @include descriptionText-Mobile;
+      }
+    }
+
+    &__features {
+      &-img {
+        width: 100%;
+      }
+
+      &-list {
+        &_textbox {
+          @include colCenter;
+
+          &-title {
+            margin-bottom: 0.3rem;
+          }
+
+          &-description {
+            width: 90%;
+            font-size: 0.95rem;
+            line-height: 1.7rem;
+            margin-bottom: 3.5rem;
+          }
+        }
+      }
+    }
+  }
+
+  .clipboard {
+    margin-bottom: 6rem;
+
+    &__textbox {
+      &-title {
+        @include titleText-Mobile;
+      }
+
+      &-description {
+        @include descriptionText-Mobile;
+        margin-bottom: 3.5rem;
+      }
+    }
+
+    &__img {
+      width: 110%
+    }
+  }
+
+  .workflow {
+    &__textbox {
+      margin-bottom: 6rem;
+
+      &-title {
+        @include titleText-Mobile;
+      }
+
+      &-description {
+        @include descriptionText-Mobile;
+      }
+    }
+
+    &__features {
+      &-featurebox {
+        &_img {}
+
+        &_title {}
+
+        &_description {
+          line-height: 1.5rem;
+          margin-bottom: 5rem;
+        }
+      }
+    }
+
+    &__brands {
+      @include colCenter;
+
+      &-img {
+        width: 40%;
+        height: auto;
+        margin-bottom: 4.5rem;
+      }
+    }
+  }
+
+  .os {
+    &__textbox {
+      &-title {
+        @include titleText-Mobile;
+      }
+
+      &-description {
+        @include descriptionText-Mobile;
+      }
+    }
+
+    &__buttons {
+      @include colCenter;
+
+      &-ios {
+        @include mobileButtonStyle;
+        margin-bottom: 1.5rem;
+      }
+
+      &-mac {
+        @include mobileButtonStyle;
+      }
+    }
+  }
+
+  .footer {
+    height: 500px;
+    @include colEvenly;
+
+    &__logo {
+      &-img {}
+    }
+
+    &__links {
+      @include colBetween;
+
+      &-link {
+        font-size: 1.15rem;
+        margin-bottom: 1.5rem;
+      }
+    }
+
+    &__sm {
+      &-facebook {}
+
+      &-twitter {
+        margin: 0 2rem;
+      }
+
+      &-instagram {}
+    }
+  }
+}
+
+/* -------------------------------------------------------------------------- */
+/*                                   GENERAL                                  */
+/* -------------------------------------------------------------------------- */
+.intro {
+  @include colCenter;
+  text-align: center;
+  margin-top: 8rem;
+  margin-bottom: 10rem;
+
+  &__logo {
+    margin-bottom: 3rem;
+
+    img {}
+  }
+
+  &__textbox {
+
+    &-title {
+      margin-bottom: 1.5rem;
+    }
+
+    &-description {}
+  }
+
+  &__buttons {
+
+    &-ios {
+      background-color: $strong-cyan;
+
+      &:hover {
+        background-color: lighten($strong-cyan, 5%);
+      }
+    }
+
+    &-mac {
+      background-color: $light-blue;
+
+      &:hover {
+        background-color: lighten($light-blue, 5%);
+      }
+    }
+  }
+}
+
+.snippets {
+  @include colCenter;
+  text-align: center;
+
+  &__textbox {
+    margin-bottom: 5rem;
+
+    &-title {
+      margin-bottom: 1.5rem;
+    }
+
+    &-description {}
+  }
+
+  &__features {
+    margin-bottom: 10rem;
+
+    &-img {}
+
+    &-list {
+
+      margin-top: 4rem;
+
+      &_textbox {
+
+        &-title {
+          color: $dark-gray;
+          font-size: 1.5rem;
+          font-weight: 600;
+        }
+
+        &-description {
+          color: $gray;
+
+        }
+      }
+    }
+  }
+}
+
+.clipboard {
+  @include colCenter;
+
+  &__textbox {
+    text-align: center;
+    @include colCenter;
+
+    &-title {
+      margin-bottom: 1.2rem;
+    }
+
+    &-description {}
+  }
+
+  &__img {}
+}
+
+.workflow {
+  // @include colCenter;
+  margin-bottom: 8rem;
+
+  &__textbox {
+    text-align: center;
+
+    &-title {
+      margin-bottom: 1rem;
+    }
+
+    &-description {}
+  }
+
+  &__features {
+
+    margin-bottom: 10rem;
+
+    &-featurebox {
+      text-align: center;
+
+      &_img {
+        margin-bottom: 2.5rem;
+      }
+
+      &_title {
+        color: $dark-gray;
+        font-size: 1.5rem;
+        margin-bottom: 0.8rem;
+        font-weight: 600;
+      }
+
+      &_description {
+        color: $gray;
+      }
+    }
+  }
+
+  &__brands {
+    justify-content: center;
+    align-items: center;
+
+    &-img {}
+  }
+}
+
+.os {
+  @include colCenter;
+  text-align: center;
+
+  &__textbox {
+    @include colCenter;
+
+    &-title {
+      margin-bottom: 1rem;
+    }
+
+    &-description {
+      margin-bottom: 3.5rem;
+    }
+  }
+
+  &__buttons {
+    margin-bottom: 10rem;
+
+    &-ios {
+      background-color: $strong-cyan;
+
+      &:hover {
+        background-color: lighten($strong-cyan, 5%);
+      }
+    }
+
+    &-mac {
+      background-color: $light-blue;
+
+      &:hover {
+        background-color: lighten($light-blue, 5%);
+      }
+    }
+  }
+}
+
+.footer {
+  width: 100%;
+  background-color: $smoke-white;
+
+
+  &__logo {
+
+    &-img {
+      width: 55px;
+      height: auto;
+    }
+  }
+
+  &__links {
+
+
+    &-link {
+      font-weight: 500;
+      color: rgba($dark-gray, 0.8);
+
+      &:hover {
+        color: $strong-cyan;
+      }
+
+    }
+  }
+
+  &__sm {
+    &-facebook {
+      font-size: 1.8rem;
+      color: $dark-gray;
+
+      &:hover {
+        color: $strong-cyan;
+      }
+    }
+
+    &-twitter {
+      font-size: 1.6rem;
+      color: $dark-gray;
+
+      &:hover {
+        color: $strong-cyan;
+      }
+    }
+
+    &-instagram {
+      font-size: 1.8rem;
+      color: $dark-gray;
+
+      &:hover {
+        color: $strong-cyan;
+      }
+    }
+  }
+}

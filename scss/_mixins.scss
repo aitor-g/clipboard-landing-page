@@ -1,0 +1,105 @@
+@use './variables' as *;
+
+@mixin onDesktop {
+  @media screen and (min-width: 1269px) {
+    @content;
+  }
+}
+
+@mixin onMobile {
+  @media screen and (max-width: 1268px) {
+    @content;
+  }
+}
+
+@mixin colCenter {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+@mixin colEvenly {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: center;
+}
+
+@mixin colBetween {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+}
+
+@mixin titleText-Desktop {
+  color: $dark-gray;
+  font-size: 2.2rem;
+  font-weight: $semi;
+}
+
+@mixin descriptionText-Desktop {
+  color: $gray;
+  font-size: 1.1rem;
+  font-weight: $med;
+  line-height: 2rem;
+}
+
+@mixin introTitleText-Desktop {
+  color: $dark-gray;
+  font-size: 2.5rem;
+  font-weight: $semi;
+}
+
+@mixin introDescriptionText-Desktop {
+  color: $gray;
+  font-size: 1.25rem;
+  font-weight: $med;
+  line-height: 2rem;
+}
+
+@mixin titleText-Mobile {
+  color: $dark-gray;
+  font-size: 1.8rem;
+  font-weight: $semi;
+}
+
+@mixin descriptionText-Mobile {
+  color: $gray;
+  font-size: 1rem;
+  font-weight: $med;
+  line-height: 1.6rem;
+}
+
+@mixin introTitleText-Mobile {
+  color: $dark-gray;
+  font-size: 1.8rem;
+  font-weight: $semi;
+}
+
+@mixin introDescriptionText-Mobile {
+  color: $gray;
+  font-size: 0.98rem;
+  font-weight: $med;
+  line-height: 1.7rem;
+}
+
+@mixin desktopButtonStyle {
+  padding: 1rem 2rem;
+  font-weight: 500;
+  font-size: 1rem;
+  letter-spacing: 0.1rem;
+  border-radius: 2rem;
+  box-shadow: 0 2px 2px 2px rgba(black, 0.1);
+  margin: 0 0.5rem;
+}
+
+@mixin mobileButtonStyle {
+  padding: 1rem 4.5rem;
+  font-weight: 500;
+  font-size: 1rem;
+  letter-spacing: 0.1rem;
+  border-radius: 2rem;
+  box-shadow: 0 2px 2px 2px rgba(black, 0.1);
+}
